@@ -7,7 +7,7 @@ const client = require('twilio')(accountSid, authToken);
     client.messages.create({
         from: '+17853766431',
         to: '+5521981248459',
-        body: "You just sent an SMS from Node.js using Twilio!"
+        body: "Olar"
         
     }).then(message => console.log(message.sid)) 
     .done();

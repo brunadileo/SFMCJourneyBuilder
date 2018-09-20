@@ -1,0 +1,75 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message",
+        "isConfigured":false
+    },
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Send SMS",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity"
+        }
+    },
+    "arguments": {
+        "execute": {
+           "inArguments":[
+				{
+                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                }									
+			],
+          "outArguments": [],
+          "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/execute?maria=2",
+           "verb": "GET",
+            "body": "emailAddress",
+            "header": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 10000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "124ed727-4be8-4497-bfe7-4876494faa6c",
+      "save": {
+        "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/publish",
+           "verb": "POST",
+        "useJwt": true
+       },
+      "stop": {
+        "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/stop",
+           "verb": "POST",
+        "useJwt": true
+      },
+      "validate": {
+        "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": true
+      }
+    },
+    "wizardSteps": [
+        { "label": "Configure Activity", "key": "step1" }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 400,
+            "width": 1000,
+          "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
+    }
+}

@@ -18,13 +18,13 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
+                    "smsAddress": "{{Contact.Default.SMS}}"
                 }									
 			],
           "outArguments": [],
-          "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/execute?maria=2",
+          "url": "https://mysterious-temple-31812.herokuapp.com/journeybuilder/execute",
            "verb": "GET",
-            "body": "emailAddress",
+            "body": "smsAddress",
             "header": "",
             "format": "json",
             "useJwt": true,
@@ -60,7 +60,7 @@
     "userInterfaces": {
         "configModal": {
             "height": 400,
-            "width": 1000,
+            "width": 500,
           "fullscreen": false
         }
     },
